@@ -1,0 +1,210 @@
+@font-face {
+	font-family: "Boxcutter Bold";
+	src: 
+	url("assets/boxcutter-bold.eot"),
+	url("assets/boxcutter-bold.woff") format("woff"),
+	url("assets/boxcutter-bold.otf") format("opentype"),
+	url("assets/boxcutter-bold.svg") format("svg");
+}
+body {
+	margin: 0;
+	background-image: url("assets/background.jpg");
+	background-size: cover;
+}
+.top {
+	position: relative;
+	padding-bottom: 33.33%;
+	padding-top: 0px;
+	height: 0;
+	z-index: 1;
+}
+.top video { 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: block;
+}
+.top #muteButton {
+	position: absolute;
+  	right: 1vmin;
+  	bottom: 1vmin;
+  	display: block;
+	height: 2vmin;
+	width: auto;
+	-moz-border-radius: 3vmin;
+	border-radius: 3vmin;
+	background-color: #f5de43;
+	padding: 1vmin;
+	background-clip: padding-box;
+}
+.top #muteButton:hover:not(.active) {
+  background-color: #ee2036;
+}
+.header {
+	position: fixed;
+	padding-bottom: 15%;
+	padding-top: 0;
+	height: 0;
+	width: 100%;
+	z-index: 2;
+}
+.header #logo {
+	width: 30vmin;
+	height: 6vmin;
+	position: absolute;
+	margin: 2vmin;
+    color: white;
+	background-color: #00afd8;
+	font-family: "Boxcutter Bold";
+	font-size: 4vmin;
+	text-decoration: none;
+	text-align: center;
+	line-height: 6vmin;
+}
+.header ul {
+	list-style-type: none;
+	margin: 1vmin;
+	overflow: hidden;
+}
+.header li {
+	float: right;
+	padding: 2vmin;
+	font-family: "Boxcutter Bold";
+}
+.header li a {
+	display: block;
+	height: 6vmin;
+	width: 6vmin;
+	line-height: 6vmin;
+	-moz-border-radius: 3vmin;
+	border-radius: 3vmin;
+	background-color: #f5de43;
+	color: white;
+	text-align: center;
+	font-size: 2vmin;
+	text-decoration: none;
+}
+.header li a:hover:not(.active) {
+	background-color: #ee2036;
+}
+.header li a.active {
+	color: white;
+	background-color: #00afd8;
+}
+
+/*--mobile--*/
+.body {
+	display: flex;
+	flex-direction: column;
+	height: auto;
+	margin: 0;
+	align-items: center;
+	justify-content: center;
+}
+.body .shopitem {
+	order: 1;
+}
+.body .intobject {
+	order:2;
+}
+.body .spotify {
+    order:3;
+}
+.body > div {
+	width: 340px;
+    height: 500px;
+    background-color: #ffffff;
+	padding: 1vw;
+	background-clip: content-box;
+}
+/*--desktop--*/
+@media screen and (min-width:1080px) {
+	.body{
+		flex-wrap: nowrap;
+		flex-direction: row;
+	}
+	.body .shopitem {
+		order: 1;
+	}
+	.body .intobject {
+		order: 2;
+	}
+		.body .spotify {
+	    order: 3;
+	}
+}
+/*------------*/
+
+.shopitem #picture {
+	height: 280px;
+	width: auto;
+	display: block;
+	margin: 0 auto 0 auto;
+	padding: 0;
+}
+.shtitle {
+	margin: 0 0 0 20px;
+	height: auto;
+	width: 100%;
+	padding: 0;
+	display: block;
+}
+.shdesc {
+	display: inline-block;
+	float: left;
+	margin: 0 0 0 20px;
+	height: auto;
+	width: 60%;
+	padding: 0;
+}
+.shprice {
+	display: inline-block;
+	float: right;
+	margin: 0 20px 0 0;
+	text-align: right;
+	height: auto;
+	width: auto;
+	padding: 0;
+}
+.shmore a {
+	clear: left;
+	margin: 75px auto auto auto;
+	display: block;
+	height: 80px;
+	width: 80px;
+	line-height: 80px;
+	-moz-border-radius: 80px;
+	border-radius: 80px;
+	background-color: #ee2036;
+	color: white;
+	text-align: center;
+	font-family: Arial;
+	font-size: 90px;
+	text-decoration: none;
+}
+.shtitle h3 {
+	font-family: Arial;
+	font-size: 20px;
+	font-weight: 900;
+	margin: 5px 0 15px 0;
+}
+.shdesc p {
+	font-family: Arial;
+	font-size: 16px;
+	font-weight: 600;
+	margin: 0 0 0 0;
+}
+.shprice h4 {
+	font-family: Arial;
+	font-size: 20px;
+	font-weight: 800;
+	margin: 0 0 0 0;
+}
+.spotify iframe {
+	width: 320px;
+	height: 480px;
+	display:block;
+	position: relative;
+    margin: 10px auto 0 auto;
+}
