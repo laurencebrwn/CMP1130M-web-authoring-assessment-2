@@ -8,7 +8,7 @@ document.body.appendChild( renderer.domElement );
 
 var loader = new THREE.GLTFLoader();
 
-loader.load( 'assets/3d/scene.gltf', function ( gltf ) {
+loader.load( 'http://localhost/assets/3d/scene.gltf', function ( gltf ) {
 
 	scene.add( gltf.scene );
 
