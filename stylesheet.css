@@ -116,8 +116,12 @@ body {
     order:3;
 }
 .body > div {
-	width: 340px;
-    height: 500px;
+	width: 70vw;
+    height: 102vw;
+    min-width: 350px;
+    max-width:500px;
+    min-height: 500px;
+    max-height: 735px;
     background-color: #ffffff;
 	padding: 1vw;
 	background-clip: content-box;
@@ -127,6 +131,10 @@ body {
 	.body{
 		flex-wrap: nowrap;
 		flex-direction: row;
+	}
+	.body > div {
+		width: 28vw;
+    	height: 42vw;
 	}
 	.body .shopitem {
 		order: 1;
@@ -140,7 +148,7 @@ body {
 }
 /*------------*/
 .shopitem #picture {
-	height: 280px;
+	height: 60%;
 	width: auto;
 	display: block;
 	margin: 0 auto 0 auto;
@@ -170,6 +178,7 @@ body {
 	width: auto;
 	padding: 0;
 }
+
 .shmore a {
 	clear: left;
 	margin: 75px auto auto auto;
@@ -209,17 +218,29 @@ body {
 	font-weight: 800;
 	margin: 0 0 0 0;
 }
+.spotify{
+	display: flex;
+  	justify-content: center;
+ 	align-items: center;
+}
 .spotify iframe {
-	width: 320px;
-	height: 480px;
+	width: 93%;
+	height: 95%;
 	display:block;
 	position: relative;
-    margin: 10px auto 0 auto;
+    margin: auto auto auto auto;
 }
 .footer {
+	position: fixed;
 	width:100%;
 	background-color: #f5de43;
 	outline:  3px solid #ee2036;
+	height: auto;
+	bottom: 0;
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: row;
+	justify-content: space-between;
 }
 .footer p{
 	padding: 0;
@@ -227,7 +248,7 @@ body {
 }
 .copyright {
 	display: inline-block;
-	width: 45%;
+	width: auto;
 	text-align: left;
 	padding: 0;
 	font-family: "Boxcutter Bold";
@@ -236,11 +257,11 @@ body {
 }
 .copyright sup {
 	font-family: "Arial";
-	font-size: 2vmin;
+	font-size: 1.5vmin;
 }
 .backtotop {
 	display: inline-block;
-	width: 9%;
+	width: auto;
 	text-align: center;
 	padding: 0;
 	margin: 0 0 0 0;
@@ -260,8 +281,10 @@ body {
 }
 .socials {
 	display: inline-block;
-	width: 45%	;
+	width: auto;
 	text-align: right;
+	font-family: "Arial";
+	font-size: 3vmin;
 	padding: 0;
 	margin: 0 0 0 0;
 }
