@@ -37,9 +37,12 @@ body {
 	background-color: #f5de43;
 	padding: 1vmin;
 	background-clip: padding-box;
+	cursor: pointer;
+	transition: all .2s ease-in-out;
 }
-.top #muteButton:hover:not(.active) {
-  background-color: #ee2036;
+.top #muteButton:hover {
+	background-color: #ee2036;
+	transform: scale(1.1);
 }
 .header {
 	position: fixed;
@@ -84,21 +87,22 @@ body {
 	text-align: center;
 	font-size: 2vmin;
 	text-decoration: none;
+	transition: all .2s ease-in-out;
 }
 .header li a:hover:not(.active) {
 	background-color: #ee2036;
+	transform: scale(1.1);
 }
 .header li a.active {
 	color: white;
 	background-color: #00afd8;
 }
-
 /*--mobile--*/
 .body {
 	display: flex;
 	flex-direction: column;
 	height: auto;
-	margin: 0;
+	margin: 4vmin 0 4vmin 0;
 	align-items: center;
 	justify-content: center;
 }
@@ -135,7 +139,6 @@ body {
 	}
 }
 /*------------*/
-
 .shopitem #picture {
 	height: 280px;
 	width: auto;
@@ -182,7 +185,12 @@ body {
 	font-family: Arial;
 	font-size: 90px;
 	text-decoration: none;
+	transition: all .2s ease-in-out;
 }
+.shmore a:hover {
+  	background-color: #f5de43;
+  	transform: scale(1.1);
+ }
 .shtitle h3 {
 	font-family: Arial;
 	font-size: 20px;
@@ -207,4 +215,53 @@ body {
 	display:block;
 	position: relative;
     margin: 10px auto 0 auto;
+}
+.footer {
+	width:100%;
+	background-color: #f5de43;
+	outline:  3px solid #ee2036;
+}
+.footer p{
+	padding: 0;
+	margin: 0 0 0 0;
+}
+.copyright {
+	display: inline-block;
+	width: 45%;
+	text-align: left;
+	padding: 0;
+	font-family: "Boxcutter Bold";
+	font-size: 3vmin;
+	margin: 0 0 0 0;
+}
+.copyright sup {
+	font-family: "Arial";
+	font-size: 2vmin;
+}
+.backtotop {
+	display: inline-block;
+	width: 9%;
+	text-align: center;
+	padding: 0;
+	margin: 0 0 0 0;
+	font-family: "Arial";
+	font-size: 3vmin;
+	cursor: pointer;
+    -webkit-animation: action 1s infinite  alternate;
+    animation: action 1s infinite  alternate;
+}
+@-webkit-keyframes action {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-4px); }
+}
+@keyframes action {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-4px); }
+}
+.socials {
+	display: inline-block;
+	width: 45%	;
+	text-align: right;
+	padding: 0;
+	margin: 0 0 0 0;
 }

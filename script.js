@@ -3,7 +3,6 @@ window.onload = function() {
 }
 function init(){
   console.log('init fired');
-  
 } 
 //var button = document.getElementById('muteButton');
 function toggleMute(){
@@ -17,3 +16,8 @@ function toggleMute(){
       but.src = "assets/mute.png"
   }
 };
+
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
