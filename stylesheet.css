@@ -64,7 +64,7 @@ body {
 	font-size: 4vmin;
 	text-decoration: none;
 	text-align: center;
-	line-height: 6vmin;
+	line-height: 6vmin;+
 }
 .header ul {
 	list-style-type: none;
@@ -102,7 +102,8 @@ body {
 	display: flex;
 	flex-direction: column;
 	height: auto;
-	margin: 4vmin 0 4vmin 0;
+	width: 100%;
+	margin: 6vmin 0 14vmin 0;
 	align-items: center;
 	justify-content: center;
 }
@@ -159,16 +160,16 @@ body {
 .shmore a {
 	margin: auto auto auto auto;
 	display: block;
-	height: 80px;
-	width: 80px;
-	line-height: 80px;
-	-moz-border-radius: 80px;
-	border-radius: 80px;
+	height: 60px;
+	width: 60px;
+	line-height: 60px;
+	-moz-border-radius: 60px;
+	border-radius: 60px;
 	background-color: #ee2036;
 	color: white;
 	text-align: center;
 	font-family: Arial;
-	font-size: 90px;
+	font-size: 70px;
 	text-decoration: none;
 	transition: all .2s ease-in-out;
 }
@@ -262,10 +263,10 @@ body {
   	align-items: center;
 }
 .socials img {
-	height:2vmin;
+	height:4vmin;
 	min-height: 35px;
 	width:auto;
-	padding: 2px 2px 0 0;
+	padding: 2px 12px 0 0;
 
 }
 /*--desktop--*/
@@ -273,10 +274,19 @@ body {
 	.body{
 		flex-wrap: wrap;
 		flex-direction: row;
+		margin: 6vmin 0 8vmin 0;
 	}
 	.body > div {
 		width: 28vw;
     	height: 45vw;
+	}
+	.shmore a {
+		height: 80px;
+		width: 80px;
+		line-height: 80px;
+		-moz-border-radius: 80px;
+		border-radius: 80px;
+		font-size: 90px;
 	}
 	.socials img {
 		min-height: 10px;
