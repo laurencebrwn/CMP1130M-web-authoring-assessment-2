@@ -100,7 +100,8 @@ body {
 }
 .body {
 	display: flex;
-	flex-direction: column;
+	flex-wrap: wrap;
+	flex-direction: row;
 	height: auto;
 	width: 100%;
 	margin: 6vmin 0 14vmin 0;
@@ -206,6 +207,15 @@ body {
 	display:block;
 	position: relative;
     margin: auto auto auto auto;
+}
+.demo {
+	display: flex;
+  	justify-content: center;
+ 	align-items: center;
+}
+.demo img {
+	width: 80%;
+	height: auto;
 }
 .footer {
 	position: fixed;
