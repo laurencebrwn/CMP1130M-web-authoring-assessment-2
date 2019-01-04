@@ -6,6 +6,7 @@
 	url("assets/boxcutter-bold.otf") format("opentype"),
 	url("assets/boxcutter-bold.svg") format("svg");
 }
+/*--mobile--*/
 body {
 	margin: 0;
 	background-image: url("assets/background.jpg");
@@ -97,7 +98,6 @@ body {
 	color: white;
 	background-color: #00afd8;
 }
-/*--mobile--*/
 .body {
 	display: flex;
 	flex-direction: column;
@@ -106,47 +106,25 @@ body {
 	align-items: center;
 	justify-content: center;
 }
-.body .shopitem {
-	order: 1;
-}
-.body .intobject {
-	order:2;
-}
-.body .spotify {
-    order:3;
-}
 .body > div {
 	width: 70vw;
-    height: 102vw;
-    min-width: 350px;
+    height: 112vw;
+    min-width: 250px;
     max-width:500px;
-    min-height: 500px;
-    max-height: 735px;
+    min-height: 400px;
+    max-height: 800px;
     background-color: #ffffff;
 	padding: 1vw;
 	background-clip: content-box;
 }
-/*--desktop--*/
-@media screen and (min-width:1080px) {
-	.body{
-		flex-wrap: nowrap;
-		flex-direction: row;
-	}
-	.body > div {
-		width: 28vw;
-    	height: 42vw;
-	}
-	.body .shopitem {
-		order: 1;
-	}
-	.body .intobject {
-		order: 2;
-	}
-		.body .spotify {
-	    order: 3;
-	}
+.shopitem {
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+	align-content: flex-start
 }
-/*------------*/
 .shopitem #picture {
 	height: 60%;
 	width: auto;
@@ -155,7 +133,7 @@ body {
 	padding: 0;
 }
 .shtitle {
-	margin: 0 0 0 20px;
+	margin: 0 0 0 40px;
 	height: auto;
 	width: 100%;
 	padding: 0;
@@ -166,7 +144,7 @@ body {
 	float: left;
 	margin: 0 0 0 20px;
 	height: auto;
-	width: 60%;
+	width: 65%;
 	padding: 0;
 }
 .shprice {
@@ -178,10 +156,8 @@ body {
 	width: auto;
 	padding: 0;
 }
-
 .shmore a {
-	clear: left;
-	margin: 75px auto auto auto;
+	margin: auto auto auto auto;
 	display: block;
 	height: 80px;
 	width: 80px;
@@ -204,19 +180,19 @@ body {
 	font-family: Arial;
 	font-size: 20px;
 	font-weight: 900;
-	margin: 5px 0 15px 0;
+	margin: 0px 0 15px 0;
 }
 .shdesc p {
 	font-family: Arial;
-	font-size: 16px;
+	font-size: 15px;
 	font-weight: 600;
-	margin: 0 0 0 0;
+	margin: 0;
 }
 .shprice h4 {
 	font-family: Arial;
-	font-size: 20px;
+	font-size: 18px;
 	font-weight: 800;
-	margin: 0 0 0 0;
+	margin: 0;
 }
 .spotify{
 	display: flex;
@@ -240,11 +216,12 @@ body {
 	display: flex;
 	flex-wrap: nowrap;
 	flex-direction: row;
+	align-items: center;
 	justify-content: space-between;
 }
 .footer p{
 	padding: 0;
-	margin: 0 0 0 0;
+	margin: 0;
 }
 .copyright {
 	display: inline-block;
@@ -252,21 +229,21 @@ body {
 	text-align: left;
 	padding: 0;
 	font-family: "Boxcutter Bold";
-	font-size: 3vmin;
+	font-size: 6vmin;
 	margin: 0 0 0 0;
 }
 .copyright sup {
 	font-family: "Arial";
-	font-size: 1.5vmin;
+	font-size: 2vmin;
 }
 .backtotop {
 	display: inline-block;
 	width: auto;
 	text-align: center;
 	padding: 0;
-	margin: 0 0 0 0;
+	margin: 0;
 	font-family: "Arial";
-	font-size: 3vmin;
+	font-size: 8vmin;
 	cursor: pointer;
     -webkit-animation: action 1s infinite  alternate;
     animation: action 1s infinite  alternate;
@@ -280,11 +257,38 @@ body {
     100% { transform: translateY(-4px); }
 }
 .socials {
-	display: inline-block;
-	width: auto;
-	text-align: right;
-	font-family: "Arial";
-	font-size: 3vmin;
-	padding: 0;
-	margin: 0 0 0 0;
+	display: flex;
+  	justify-content: center;
+  	align-items: center;
 }
+.socials img {
+	height:2vmin;
+	min-height: 35px;
+	width:auto;
+	padding: 2px 2px 0 0;
+
+}
+/*--desktop--*/
+@media only screen and (min-width: 992px) {
+	.body{
+		flex-wrap: wrap;
+		flex-direction: row;
+	}
+	.body > div {
+		width: 28vw;
+    	height: 45vw;
+	}
+	.socials img {
+		min-height: 10px;
+	}
+	.backtotop {
+		font-size: 2.5vmin;
+	}
+	.copyright {
+		font-size: 2.5vmin;
+	}
+	.copyright sup {
+		font-size: 1vmin;
+	}
+}
+/*------------*/

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="stylesheet.css">
+	<script src="script.js"></script>
+	<!--<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+	<script src="three.js"></script>
+	<script src="gltfloader.js"></script>-->
+	<title>TYLER THE CREATOR</title>
+</head>
+
+<body>
+
+<div class="header">
+	<a id="logo">TYLER THE CREATOR</a>
+	<nav>
+		<ul>
+			<li><a href="index.html">HOME</a></li>
+			<li><a class="active">SHOP</a></li>
+			<li><a href="#music">MUSIC</a></li>
+			<li><a href="#about">ABOUT</a></li>
+			<li><a href="#social">SOCIAL</a></li>
+		</ul>
+	</nav>
+</div>
+
+<div class="top">
+	<video id="headerVideo" poster="assets/headervidthumb.png" playsinline muted autoplay loop>
+		<source src="assets/headervid.mp4" type='video/mp4'>
+		<source src="assets/headervidcompress.mp4" type='video/mp4'>
+		<source src="assets/headervid.webm" type='video/webm'>
+	</video>
+	<img onclick="toggleMute()" id="muteButton" src="assets/mute.png">
+</div>
+
+<div class="body">
+	<div class="shopitem" id="1">
+		<img id="picture" src="assets/shop/KARAOKE TEE WHITE.png">
+		<div class="shtitle">
+			<h3>KARAOKE TEE</h3>
+		</div>
+		<div>
+			<div class="shdesc">
+				<p>100% COTTON, SCREEN PRINTED GRAPHIC</p>
+			</div>
+			<div class="shprice">
+				<h4>$35</h4>
+			</div>
+		</div>
+		<div class="shmore">
+			<a href="#shop/item">+</a>
+		</div>
+	</div>
+	<div class="shopitem" id="2">
+		<img id="picture" src="assets/shop/MULTI COLOR 3D GOLF TEE.png">
+		<div class="shtitle">
+			<h3>MULTI COLOR 3D GOLF TEE</h3>
+		</div>
+		<div>
+			<div class="shdesc">
+				<p>100% COTTON, SCREEN PRINTED GRAPHIC</p>
+			</div>
+			<div class="shprice">
+				<h4>$30</h4>
+			</div>
+		</div>
+		<div class="shmore">
+			<a href="#shop/item">+</a>
+		</div>
+	</div>
+	<div class="shopitem" id="3">
+		<img id="picture" src="assets/shop/GOLD MEDALLION BELL BUCKET HAT - LIME.png">
+		<div class="shtitle">
+			<h3>LIME BELL BUCKET HAT</h3>
+		</div>
+		<div>
+			<div class="shdesc">
+				<p>COTTON TWILL, PLATED METAL MEDALLION</p>
+			</div>
+			<div class="shprice">
+				<h4>$40</h4>
+			</div>
+		</div>
+		<div class="shmore">
+			<a href="#shop/item">+</a>
+		</div>
+	</div>
+	<div class="shopitem" id="4">
+		<img id="picture" src="assets/shop/ALLIGATOR BELT.png">
+		<div class="shtitle">
+			<h3>ALLIGATOR BELT</h3>
+		</div>
+		<div>
+			<div class="shdesc">
+				<p>EMBOSSED LAMBSKIN LEATHER, GOLD HARDWARE</p>
+			</div>
+			<div class="shprice">
+				<h4>$40</h4>
+			</div>
+		</div>
+		<div class="shmore">
+			<a href="#shop/item">+</a>
+		</div>
+	</div>
+	<div class="shopitem" id="5">
+		<img id="picture" src="assets/shop/GARDEN PUFFY JACKET.png">
+		<div class="shtitle">
+			<h3>GARDEN PUFFY JACKET</h3>
+		</div>
+		<div>
+			<div class="shdesc">
+				<p>POLYESTER/COTTON SHELL, NYLON LINING, DOWN FILL</p>
+			</div>
+			<div class="shprice">
+				<h4>$250</h4>
+			</div>
+		</div>
+		<div class="shmore">
+			<a href="#shop/item">+</a>
+		</div>
+	</div>
+		<div class="shopitem" id="6">
+		<img id="picture" src="assets/shop/BEE CARDIGAN.png">
+		<div class="shtitle">
+			<h3>BEE CARDIGAN</h3>
+		</div>
+		<div>
+			<div class="shdesc">
+				<p>MOHAIR/ACRYLIC, EMBROIDERED BEE POCKET</p>
+			</div>
+			<div class="shprice">
+				<h4>$110</h4>
+			</div>
+		</div>
+		<div class="shmore">
+			<a href="#shop/item">+</a>
+		</div>
+	</div>
+		<div class="shopitem" id="7">
+		<img id="picture" src="assets/shop/POSH GOLF POLAR FLEECE JACKET.png">
+		<div class="shtitle">
+			<h3>POSH GOLF POLAR FLEECE</h3>
+		</div>
+		<div>
+			<div class="shdesc">
+				<p>POLYESTER POLAR FLEECE, SPANDEX CUFF BINDING</p>
+			</div>
+			<div class="shprice">
+				<h4>$110</h4>
+			</div>
+		</div>
+		<div class="shmore">
+			<a href="#shop/item">+</a>
+		</div>
+	</div>
+	<div class="shopitem" id="8">
+		<img id="picture" src="assets/shop/ALLIGATOR JACKET.png">
+		<div class="shtitle">
+			<h3>ALLIGATOR JACKET</h3>
+		</div>
+		<div>
+			<div class="shdesc">
+				<p>12 OZ. DENIM, EMBROIDERED LOGO, ALLIGATOR PRINT</p>
+			</div>
+			<div class="shprice">
+				<h4>$110</h4>
+			</div>
+		</div>
+		<div class="shmore">
+			<a href="#shop/item">+</a>
+		</div>
+	</div>
+		<div class="shopitem" id="9">
+		<img id="picture" src="assets/shop/GELATO SWEATER VEST.png">
+		<div class="shtitle">
+			<h3>GELATO SWEATER VEST</h3>
+		</div>
+		<div>
+			<div class="shdesc">
+				<p>COTTON JACQUARD KNIT</p>
+			</div>
+			<div class="shprice">
+				<h4>$90</h4>
+			</div>
+		</div>
+		<div class="shmore">
+			<a href="#shop/item">+</a>
+		</div>
+	</div>
+</div>
+
+<div class="footer">
+	<div class="copyright">
+		<p>GOLFWANG<sup>©</sup></p>
+	</div>
+	<div class="backtotop">
+		<p onclick="topFunction()">˄</p>
+	</div>
+	<div class="socials">
+		<a href="https://www.facebook.com/TylertheCreatorOfficial/" target="_blank"><img src="assets/facebook.png"></a><a href="https://twitter.com/tylerthecreator" target="_blank"><img src="assets/twitter.png"></a><a href="https://www.instagram.com/feliciathegoat" target="_blank"><img src="assets/instagram.png" ></a>
+	</div>
+</div>
+
+</body>
+</html>
