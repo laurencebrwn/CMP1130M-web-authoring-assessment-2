@@ -103,10 +103,11 @@ body {
 	flex-wrap: wrap;
 	flex-direction: row;
 	height: auto;
-	width: 100%;
+	width: 100vw;
 	margin: 6vmin 0 14vmin 0;
 	align-items: center;
 	justify-content: center;
+	box-sizing: border-box;
 }
 .body > div {
 	width: 70vw;
@@ -127,8 +128,8 @@ body {
 	justify-content: space-around;
 	align-content: flex-start
 }
-.shopitem #picture {
-	height: 60%;
+.shopitem img {
+	height: 50%;
 	width: auto;
 	display: block;
 	margin: 0 auto 0 auto;
@@ -180,7 +181,7 @@ body {
  }
 .shtitle h3 {
 	font-family: Arial;
-	font-size: 20px;
+	font-size: 18px;
 	font-weight: 900;
 	margin: 0px 0 15px 0;
 }
@@ -289,6 +290,10 @@ body {
 	.body > div {
 		width: 28vw;
     	height: 45vw;
+		min-width: 300px;
+		max-width:350px;
+		min-height: 480px;
+		max-height: 560px;
 	}
 	.shmore a {
 		height: 80px;
