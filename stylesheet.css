@@ -98,6 +98,35 @@ body {
 	color: white;
 	background-color: #00afd8;
 }
+.topSlides {
+	position: relative;
+	padding-bottom: 33.33%;
+	padding-top: 0px;
+	height: 0;
+	z-index: 1;
+}
+.activeSlide {
+	position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: block;
+	background-color: #717171;
+}
+.fade {
+	-webkit-animation-name: fade;
+	-webkit-animation-duration: 1.5s;
+	animation-name: fade;
+	animation-duration: 1.5s;
+}
+@-webkit-keyframes fade {
+	from {opacity: .4} 
+	to {opacity: 1}
+}
+@keyframes fade {
+	from {opacity: .4} 
+	to {opacity: 1}
+}
 .body {
 	display: flex;
 	flex-wrap: wrap;
@@ -277,7 +306,7 @@ body {
   	align-items: center;
 }
 .socials img {
-	height:4vmin;
+	height: 6vmin;
 	min-height: 35px;
 	width:auto;
 	padding: 2px 12px 0 0;
@@ -308,6 +337,7 @@ body {
 	}
 	.socials img {
 		min-height: 10px;
+		height: 2.5vmin;
 	}
 	.backtotop {
 		font-size: 2.5vmin;
