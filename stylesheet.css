@@ -132,7 +132,7 @@ body {
 	flex-wrap: wrap;
 	flex-direction: row;
 	height: auto;
-	width: 100vw;
+	width: 100%;
 	margin: 6vmin 0 14vmin 0;
 	align-items: center;
 	justify-content: center;
@@ -290,6 +290,12 @@ body {
 	height: 60px;
 	width: auto;
 	padding: 5px;
+	transition: all .2s ease-in-out;
+	filter: opacity(70%);
+}
+.muLinks img:hover {
+	filter: opacity(100%);
+	transform: scale(1.1);
 }
 .footer {
 	position: fixed;
