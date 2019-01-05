@@ -1,10 +1,10 @@
 @font-face {
 	font-family: "Boxcutter Bold";
 	src: 
-	url("assets/boxcutter-bold.eot"),
-	url("assets/boxcutter-bold.woff") format("woff"),
-	url("assets/boxcutter-bold.otf") format("opentype"),
-	url("assets/boxcutter-bold.svg") format("svg");
+	url("assets/fonts/boxcutter-bold.eot"),
+	url("assets/fonts/boxcutter-bold.woff") format("woff"),
+	url("assets/fonts/boxcutter-bold.otf") format("opentype"),
+	url("assets/fonts/boxcutter-bold.svg") format("svg");
 }
 /*--mobile--*/
 body {
