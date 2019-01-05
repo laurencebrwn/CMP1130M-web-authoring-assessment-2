@@ -92,6 +92,7 @@ body {
 }
 .header li a:hover:not(.active) {
 	background-color: #ee2036;
+	filter: drop-shadow(0px 0px 10px rgba(0,0,0,.5));
 	transform: scale(1.1);
 }
 .header li a.active {
@@ -205,6 +206,7 @@ body {
 }
 .shmore a:hover {
   	background-color: #f5de43;
+  	filter: drop-shadow(0px 0px 10px rgba(0,0,0,.5));
   	transform: scale(1.1);
  }
 .shtitle h3 {
@@ -291,10 +293,10 @@ body {
 	width: auto;
 	padding: 5px;
 	transition: all .2s ease-in-out;
-	filter: opacity(70%);
+	filter: opacity(85%);
 }
 .muLinks img:hover {
-	filter: opacity(100%);
+	filter: opacity(100%) drop-shadow(0px 0px 10px rgba(0,0,0,.5));
 	transform: scale(1.1);
 }
 .footer {
