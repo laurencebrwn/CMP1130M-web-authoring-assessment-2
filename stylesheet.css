@@ -214,9 +214,12 @@ body {
   	justify-content: center;
  	align-items: center;
 }
-.demo img {
+.demo a {
 	width: 80%;
 	height: auto;
+}
+.demo img {
+	width: 100%;
 }
 .footer {
 	position: fixed;
