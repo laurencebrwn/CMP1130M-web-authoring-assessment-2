@@ -128,7 +128,7 @@ body {
 	justify-content: space-around;
 	align-content: flex-start
 }
-.shopitem img {
+.itempic {
 	height: 50%;
 	width: auto;
 	display: block;
