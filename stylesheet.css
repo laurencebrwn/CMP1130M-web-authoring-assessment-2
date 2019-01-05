@@ -68,7 +68,7 @@ body {
 }
 .header ul {
 	list-style-type: none;
-	margin: 1vmin;
+	margin: 0;
 	overflow: hidden;
 }
 .header li {
@@ -136,7 +136,6 @@ body {
 	margin: 6vmin 0 14vmin 0;
 	align-items: center;
 	justify-content: center;
-	box-sizing: border-box;
 }
 .body > div {
 	width: 70vw;
@@ -149,13 +148,13 @@ body {
 	padding: 1vw;
 	background-clip: content-box;
 }
-.shopitem {
+.shopItem {
 	display: flex;
 	flex-wrap: nowrap;
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-around;
-	align-content: flex-start
+	align-content: flex-start;
 }
 .itempic {
 	height: 50%;
@@ -249,6 +248,48 @@ body {
 }
 .demo img {
 	width: 100%;
+}
+.musicItem {
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+	align-content: flex-start;
+}
+.muTitle {
+	margin: 5%;
+	height: auto;
+	width: 100%;
+	padding: 0;
+	display: block;
+}
+.muTitle h3 {
+	text-align: center;
+	font-family: Arial;
+	font-size: 18px;
+	font-weight: 900;
+	margin: 0px 0 15px 0;
+}
+.albumCover {
+	height: 50%;
+	width: auto;
+	display: block;
+	margin: 10%;
+	padding: 0;
+	outline:  3px solid #ee2036;
+}
+.muLinks{
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: center;
+ 	align-items: center;
+ 	margin: 5%;
+}
+.muLinks img {
+	height: 60px;
+	width: auto;
+	padding: 5px;
 }
 .footer {
 	position: fixed;
