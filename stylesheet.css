@@ -248,11 +248,6 @@ body {
  	align-items: center;
  	position: relative;
 }
-.demo canvas {
-	height: 95%;
-	width: 93%;
-	z-index: 5;
-}
 .demo a {
 	position: absolute;
     width: 100%;
