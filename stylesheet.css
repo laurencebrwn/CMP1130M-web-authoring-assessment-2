@@ -246,13 +246,25 @@ body {
 	display: flex;
   	justify-content: center;
  	align-items: center;
+ 	position: relative;
+}
+.demo canvas {
+	height: 95%;
+	width: 93%;
+	z-index: 5;
 }
 .demo a {
-	width: 80%;
-	height: auto;
+	position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
 }
 .demo img {
+	position: absolute;
 	width: 100%;
+	z-index: 1;
 }
 .musicItem {
 	display: flex;
