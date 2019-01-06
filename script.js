@@ -66,7 +66,7 @@ function Letter(abc, x, y, velX, velY, color, size) {
 
 Letter.prototype.draw = function() {
   ctx.beginPath();
-  ctx.font = "bold 100px Arial"
+  ctx.font = "100px Arial"
   ctx.textAlign = "center";
   ctx.textBaseline = "middle"; 
   ctx.fillStyle = this.color;
@@ -100,12 +100,13 @@ Letter.prototype.collisionDetect = function() {
       var dy = this.y - letters[j].y;
       var distance = Math.sqrt(dx * dx + dy * dy);
 
-      if (distance < this.size + letters[j].size) {
+      if (distance <= this.size + letters[j].size) {
         this.velX = -(this.velX);
         this.velY = -(this.velY);
+        this.x += this.velX;
+        this.y += this.velY;
       }
-      this.x += this.velX;
-      this.y += this.velY;
+      
     }
   }
 }
@@ -116,13 +117,13 @@ function loop() {
 
   while (letters.length < 4) {
     var size = 30;
-    var letter = new Letter("D", random(0 + size,width - size), random(0 + size,height - size), 0.5, 0.5, 'rgb(237,32,45)', size);
+    var letter = new Letter("D", (1 + size), (height/2), 1, 1, 'rgb(237,32,45)', size);
     letters.push(letter);
-    var letter = new Letter("E", random(0 + size,width - size), random(0 + size,height - size), -0.5, 0.5, 'rgb(0,175,216)', size);
+    var letter = new Letter("E", ((width/2) - (size)), (height/2), -1, 1, 'rgb(0,175,216)', size);
     letters.push(letter);
-    var letter = new Letter("M", random(0 + size,width - size), random(0 + size,height - size), 0.5, -0.5, 'rgb(245,222,67)', size);
+    var letter = new Letter("M", ((width/2) + (size)), (height/2), 1, -1, 'rgb(245,222,67)', size);
     letters.push(letter);
-    var letter = new Letter("O", random(0 + size,width - size), random(0 + size,height - size), -0.5, -0.5, 'rgb(237,32,45)', size);
+    var letter = new Letter("O", (width - (1+size)), (height/2), -1, -1, 'rgb(237,32,45)', size);
     letters.push(letter);
   }
 
