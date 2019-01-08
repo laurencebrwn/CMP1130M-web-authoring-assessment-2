@@ -276,7 +276,7 @@ body {
 .shopSlide {
   	display: none;
 }
-#defaultSlide {
+.defaultSlide {
 	display: block;
 }
 .row:after {
