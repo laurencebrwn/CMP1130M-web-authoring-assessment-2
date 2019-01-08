@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
 	<link rel="stylesheet" type="text/css" href="stylesheet.css">
-	<script src="script.js"></script>
+	<script src="script.js" async
+	></script>
 	<title>TYLER THE CREATOR</title>
 </head>
 
@@ -22,22 +23,22 @@
 </div>
 
 <div class="topSlides">
-	<div class="slide fade">
+	<div class="slide">
 		<img src="assets/shop/slideshow/slide1.png">
 	</div>
-	<div class="slide fade">
+	<div class="slide">
 		<img src="assets/shop/slideshow/slide2.png">
 	</div>
-	<div class="slide fade">
+	<div class="slide">
 		<img src="assets/shop/slideshow/slide3.png">
 	</div>
 </div>
 
 <div class="body">
 	<div class="shopItem" id="1">
-		<img class="itempic" src="assets/shop/KARAOKE_TEE_WHITE.png" alt="KARAOKE TEE">
+		<img class="itempic" src="assets/shop/SAVE_THE_BEES_TEE_WHITE_2.png" alt="SAVE THE BEES TEE">
 		<div class="shtitle">
-			<h3>KARAOKE TEE</h3>
+			<h3>SAVE THE BEES TEE</h3>
 		</div>
 		<div>
 			<div class="shdesc">
@@ -48,8 +49,49 @@
 			</div>
 		</div>
 		<div class="shmore">
-			<a href="#shop/item">+</a>
+			<p onclick="showModal('modal1')">+</p>
 		</div>
+	</div>
+	<div id="modal1" class="modal">
+		<div class="modalContent">
+    		<span class="close" onclick="closeModal()">&times;</span>
+    		<div class="slideContainer">
+				<div class="shopSlide" id="defaultSlide"><img class="itemPicture" src="assets/shop/SAVE_THE_BEES_TEE_WHITE_1.png"></div>
+				<div class="shopSlide"><img src="assets/shop/SAVE_THE_BEES_TEE_WHITE_2.png"></div>
+				<div class="shopSlide"><img src="assets/shop/SAVE_THE_BEES_TEE_SAND_1.png"></div>
+				<div class="shopSlide"><img src="assets/shop/SAVE_THE_BEES_TEE_SAND_2.png"></div>
+				<div class="shopSlide"><img src="assets/shop/SAVE_THE_BEES_TEE_BLACK_1.png"></div>
+				<div class="shopSlide"><img src="assets/shop/SAVE_THE_BEES_TEE_BLACK_2.png"></div>
+				<div class="row">
+					<div class="column"><img class="thumb" src="assets/shop/SAVE_THE_BEES_TEE_WHITE_1.png" onclick="currentSlide(1)" alt="SAVE THE BEES TEE"></div>
+					<div class="column"><img class="thumb" src="assets/shop/SAVE_THE_BEES_TEE_WHITE_2.png" onclick="currentSlide(2)" alt="SAVE THE BEES TEE"></div>
+					<div class="column"><img class="thumb" src="assets/shop/SAVE_THE_BEES_TEE_SAND_1.png" onclick="currentSlide(3)" alt="SAVE THE BEES TEE"></div>
+					<div class="column"><img class="thumb" src="assets/shop/SAVE_THE_BEES_TEE_SAND_2.png" onclick="currentSlide(4)" alt="SAVE THE BEES TEE"></div>
+					<div class="column"><img class="thumb" src="assets/shop/SAVE_THE_BEES_TEE_BLACK_1.png" onclick="currentSlide(5)" alt="SAVE THE BEES TEE"></div> 
+					<div class="column"><img class="thumb" src="assets/shop/SAVE_THE_BEES_TEE_BLACK_2.png" onclick="currentSlide(6)" alt="SAVE THE BEES TEE"></div>
+				</div>
+			</div>
+			<div class="itemInfo">
+				<h3 class="itemTitle">SAVE THE BEES TEE</h3>
+				<p>100% COTTON, SCREEN PRINTED GRAPHIC</p>
+				<h4 class="itemPrice">$35</h4>
+				<div class="itemOptions">
+					<select>
+						<option selected disabled="">COLOUR</option>
+						<option value="w">WHITE</option>
+						<option value="s">SAND</option>
+						<option value="b">BLACK</option>
+					</select>
+					<select>
+						<option selected disabled="">SIZE</option>
+						<option value="s">SMALL</option>
+						<option value="m">MEDIUM</option>
+						<option value="l">LARGE</option>
+					</select>
+					<button class="btnAddCart" onclick="closeModal()">ADD TO CART</button>
+				</div>
+			</div>
+  		</div>
 	</div>
 	<div class="shopItem" id="2">
 		<img class="itempic" src="assets/shop/MULTI_COLOR_3D_GOLF_TEE.png" alt="MULTI COLOR 3D GOLF">
@@ -61,12 +103,56 @@
 				<p>100% COTTON, SCREEN PRINTED GRAPHIC</p>
 			</div>
 			<div class="shprice">
-				<h4>$30</h4>
+				<h4>$35</h4>
 			</div>
 		</div>
 		<div class="shmore">
-			<a href="#shop/item">+</a>
+			<p onclick="showModal('modal2')">+</p>
 		</div>
+	</div>
+	<div id="modal2" class="modal">
+		<div class="modalContent">
+    		<span class="close" onclick="closeModal()">&times;</span>
+    		<div class="slideContainer">
+				<div class="shopSlide" id="defaultSlide"><img class="itemPicture" src="assets/shop/MULTI_COLOR_3D_GOLF_TEE.png"></div>
+				<div class="shopSlide"><img src="assets/shop/3D_GOLF_TEE_GREY.png"></div>
+				<div class="shopSlide"><img src="assets/shop/3D_GOLF_TEE_CREAM.png"></div>
+				<div class="shopSlide"><img src="assets/shop/3D_GOLF_TEE_MINT.png"></div>
+				<div class="shopSlide"><img src="assets/shop/3D_GOLF_TEE_PINK.png"></div>
+				<div class="shopSlide"><img src="assets/shop/3D_GOLF_TEE_WHITE.png"></div>
+				<div class="row">
+					<div class="column"><img class="thumb" src="assets/shop/MULTI_COLOR_3D_GOLF_TEE.png" onclick="currentSlide(1)" alt="MULTI COLOR 3D GOLF"></div>
+					<div class="column"><img class="thumb" src="assets/shop/3D_GOLF_TEE_GREY.png" onclick="currentSlide(2)" alt="MULTI COLOR 3D GOLF"></div>
+					<div class="column"><img class="thumb" src="assets/shop/3D_GOLF_TEE_CREAM.png" onclick="currentSlide(3)" alt="MULTI COLOR 3D GOLF"></div>
+					<div class="column"><img class="thumb" src="assets/shop/3D_GOLF_TEE_MINT.png" onclick="currentSlide(4)" alt="MULTI COLOR 3D GOLF"></div>
+					<div class="column"><img class="thumb" src="assets/shop/3D_GOLF_TEE_PINK.png" onclick="currentSlide(5)" alt="MULTI COLOR 3D GOLF"></div> 
+					<div class="column"><img class="thumb" src="assets/shop/3D_GOLF_TEE_WHITE.png" onclick="currentSlide(6)" alt="MULTI COLOR 3D GOLF"></div>
+				</div>
+			</div>
+			<div class="itemInfo">
+				<h3 class="itemTitle">MULTI COLOR 3D GOLF</h3>
+				<p>100% COTTON, SCREEN PRINTED GRAPHIC</p>
+				<h4 class="itemPrice">$35</h4>
+				<div class="itemOptions">
+					<select>
+						<option selected disabled="">COLOUR</option>
+						<option value="b">BLACK</option>
+						<option value="g">GREY</option>
+						<option value="c">CREAM</option>
+						<option value="m">MINT</option>
+						<option value="p">PINK</option>
+						<option value="w">WHITE</option>
+					</select>
+					<select>
+						<option selected disabled="">SIZE</option>
+						<option value="s">SMALL</option>
+						<option value="m">MEDIUM</option>
+						<option value="large">LARGE</option>
+					</select>
+					<button class="btnAddCart" onclick="closeModal()">ADD TO CART</button>
+				</div>
+			</div>
+  		</div>
 	</div>
 	<div class="shopItem" id="3">
 		<img class="itempic" src="assets/shop/GOLD_MEDALLION_BELL_BUCKET_HAT.png" ALT="LIME BELL BUCKET HAT">
@@ -82,8 +168,27 @@
 			</div>
 		</div>
 		<div class="shmore">
-			<a href="#shop/item">+</a>
+			<p onclick="showModal('modal3')">+</p>
 		</div>
+	</div>
+	<div id="modal3" class="modal">
+		<div class="modalContent">
+    		<span class="close" onclick="closeModal()">&times;</span>
+    		<div class="slideContainer">
+				<div class="shopSlide" id="defaultSlide"><img class="itemPicture" src="assets/shop/GOLD_MEDALLION_BELL_BUCKET_HAT.png"></div>
+				<div class="row">
+					<div class="column"><img class="thumb" src="assets/shop/GOLD_MEDALLION_BELL_BUCKET_HAT.png" onclick="currentSlide(1)" alt="LIME BELL BUCKET HAT"></div>
+				</div>
+			</div>
+			<div class="itemInfo">
+				<h3 class="itemTitle">LIME BELL BUCKET HAT</h3>
+				<p>COTTON TWILL, PLATED METAL MEDALLION</p>
+				<h4 class="itemPrice">$40</h4>
+				<div class="itemOptions">
+					<button class="btnAddCart" onclick="closeModal()">ADD TO CART</button>
+				</div>
+			</div>
+  		</div>
 	</div>
 	<div class="shopItem" id="4">
 		<img class="itempic" src="assets/shop/ALLIGATOR_BELT.png" alt="ALLIGATOR BELT">
@@ -95,12 +200,44 @@
 				<p>EMBOSSED LAMBSKIN LEATHER, GOLD HARDWARE</p>
 			</div>
 			<div class="shprice">
-				<h4>$40</h4>
+				<h4>$60</h4>
 			</div>
 		</div>
 		<div class="shmore">
-			<a href="#shop/item">+</a>
+			<p onclick="showModal('modal4')">+</p>
 		</div>
+	</div>
+		<div id="modal4" class="modal">
+		<div class="modalContent">
+    		<span class="close" onclick="closeModal()">&times;</span>
+    		<div class="slideContainer">
+				<div class="shopSlide" id="defaultSlide"><img class="itemPicture" src="assets/shop/ALLIGATOR_BELT.png"></div>
+				<div class="shopSlide"><img src="assets/shop/ALLIGATOR_BELT_GREEN.png"></div>
+				<div class="row">
+					<div class="column"><img class="thumb" src="assets/shop/ALLIGATOR_BELT.png" onclick="currentSlide(1)" alt="ALLIGATOR BELT"></div>
+					<div class="column"><img class="thumb" src="assets/shop/ALLIGATOR_BELT_GREEN.png" onclick="currentSlide(2)" alt="ALLIGATOR BELT"></div>
+				</div>
+			</div>
+			<div class="itemInfo">
+				<h3 class="itemTitle">ALLIGATOR BELT</h3>
+				<p>EMBOSSED LAMBSKIN LEATHER, GOLF HARDWARE, GOLD FOIL PRINT</p>
+				<h4 class="itemPrice">$60</h4>
+				<div class="itemOptions">
+					<select>
+						<option selected disabled="">COLOUR</option>
+						<option value="w">ALBINO WHITE</option>
+						<option value="g">SWAMP GREEN</option>
+					</select>
+					<select>
+						<option selected disabled="">SIZE</option>
+						<option value="s">SMALL</option>
+						<option value="m">MEDIUM</option>
+						<option value="large">LARGE</option>
+					</select>
+					<button class="btnAddCart" onclick="closeModal()">ADD TO CART</button>
+				</div>
+			</div>
+  		</div>
 	</div>
 	<div class="shopItem" id="5">
 		<img class="itempic" src="assets/shop/GARDEN_PUFFY_JACKET.png" alt="GARDEN PUFFY JACKET">
@@ -116,8 +253,37 @@
 			</div>
 		</div>
 		<div class="shmore">
-			<a href="#shop/item">+</a>
+			<p onclick="showModal('modal5')">+</p>
 		</div>
+	</div>
+	<div id="modal5" class="modal">
+		<div class="modalContent">
+    		<span class="close" onclick="closeModal()">&times;</span>
+    		<div class="slideContainer">
+				<div class="shopSlide" id="defaultSlide"><img class="itemPicture" src="assets/shop/GARDEN_PUFFY_JACKET.png"></div>
+				<div class="shopSlide"><img src="assets/shop/GARDEN_PUFFY_JACKET_PURPLE_2.jpg"></div>
+				<div class="shopSlide"><img src="assets/shop/GARDEN_PUFFY_JACKET_PURPLE_3.jpg"></div>
+				<div class="row">
+					<div class="column"><img class="thumb" src="assets/shop/GARDEN_PUFFY_JACKET.png" onclick="currentSlide(1)" alt="GARDEN PUFFY JACKET"></div>
+					<div class="column"><img class="thumb" src="assets/shop/GARDEN_PUFFY_JACKET_PURPLE_2.jpg" onclick="currentSlide(2)" alt="GARDEN PUFFY JACKET"></div>
+					<div class="column"><img class="thumb" src="assets/shop/GARDEN_PUFFY_JACKET_PURPLE_3.jpg" onclick="currentSlide(3)" alt="GARDEN PUFFY JACKET"></div>
+				</div>
+			</div>
+			<div class="itemInfo">
+				<h3 class="itemTitle">GARDEN PUFFY JACKET</h3>
+				<p>POLYESTER / COTTON JACQUARD SHELL, NYLON LINING, DOWN FILL, BUNGEE CINCH ADJUSTERS, GOLF le FLEUR* ZIPPER PULL</p>
+				<h4 class="itemPrice">$250</h4>
+				<div class="itemOptions">
+					<select>
+						<option selected disabled="">SIZE</option>
+						<option value="s">SMALL</option>
+						<option value="m">MEDIUM</option>
+						<option value="l">LARGE</option>
+					</select>
+					<button class="btnAddCart" onclick="closeModal()">ADD TO CART</button>
+				</div>
+			</div>
+  		</div>
 	</div>
 	<div class="shopItem" id="6">
 		<img class="itempic" src="assets/shop/BEE_CARDIGAN.png" alt="BEE CARDIGAN">
@@ -133,8 +299,35 @@
 			</div>
 		</div>
 		<div class="shmore">
-			<a href="#shop/item">+</a>
+			<p onclick="showModal('modal6')">+</p>
 		</div>
+	</div>
+	<div id="modal6" class="modal">
+		<div class="modalContent">
+    		<span class="close" onclick="closeModal()">&times;</span>
+    		<div class="slideContainer">
+				<div class="shopSlide" id="defaultSlide"><img class="itemPicture" src="assets/shop/BEE_CARDIGAN.png"></div>
+				<div class="shopSlide"><img src="assets/shop/BEE_CARDIGAN_GOLD_2.jpg"></div>
+				<div class="row">
+					<div class="column"><img class="thumb" src="assets/shop/BEE_CARDIGAN.png" onclick="currentSlide(1)" alt="BEE CARDIGAN"></div>
+					<div class="column"><img class="thumb" src="assets/shop/BEE_CARDIGAN_GOLD_2.jpg" onclick="currentSlide(2)" alt="BEE CARDIGAN"></div>
+				</div>
+			</div>
+			<div class="itemInfo">
+				<h3 class="itemTitle">BEE CARDIGAN</h3>
+				<p>MOHAIR/ACRYLIC, EMBROIDERED BEE POCKET</p>
+				<h4 class="itemPrice">$110</h4>
+				<div class="itemOptions">
+					<select>
+						<option selected disabled="">SIZE</option>
+						<option value="s">SMALL</option>
+						<option value="m">MEDIUM</option>
+						<option value="l">LARGE</option>
+					</select>
+					<button class="btnAddCart" onclick="closeModal()">ADD TO CART</button>
+				</div>
+			</div>
+  		</div>
 	</div>
 	<div class="shopItem" id="7">
 		<img class="itempic" src="assets/shop/POSH_GOLF_POLAR_FLEECE_JACKET.png" alt="POSH GOLF POLAR FLEECE">
@@ -150,8 +343,35 @@
 			</div>
 		</div>
 		<div class="shmore">
-			<a href="#shop/item">+</a>
+			<p onclick="showModal('modal7')">+</p>
 		</div>
+	</div>
+	<div id="modal7" class="modal">
+		<div class="modalContent">
+    		<span class="close" onclick="closeModal()">&times;</span>
+    		<div class="slideContainer">
+				<div class="shopSlide" id="defaultSlide"><img class="itemPicture" src="assets/shop/POSH_GOLF_POLAR_FLEECE_JACKET.png"></div>
+				<div class="shopSlide"><img src="assets/shop/POSH_GOLF_POLAR_FLEECE_JACKET_BLACK_2.png"></div>
+				<div class="row">
+					<div class="column"><img class="thumb" src="assets/shop/POSH_GOLF_POLAR_FLEECE_JACKET.png" onclick="currentSlide(1)" alt="POSH GOLF POLAR FLEECE"></div>
+					<div class="column"><img class="thumb" src="assets/shop/POSH_GOLF_POLAR_FLEECE_JACKET_BLACK_2.png" onclick="currentSlide(2)" alt="POSH GOLF POLAR FLEECE"></div>
+				</div>
+			</div>
+			<div class="itemInfo">
+				<h3 class="itemTitle">POSH GOLF POLAR FLEECE</h3>
+				<p>POLYESTER POLAR FLEECE, SPANDEX CUFF BINDING, BUNGEE CINCH ADJUSTERS, EMBROIDERED LOGO</p>
+				<h4 class="itemPrice">$110</h4>
+				<div class="itemOptions">
+					<select>
+						<option selected disabled="">SIZE</option>
+						<option value="s">SMALL</option>
+						<option value="m">MEDIUM</option>
+						<option value="l">LARGE</option>
+					</select>
+					<button class="btnAddCart" onclick="closeModal()">ADD TO CART</button>
+				</div>
+			</div>
+  		</div>
 	</div>
 	<div class="shopItem" id="8">
 		<img class="itempic" src="assets/shop/ALLIGATOR_JACKET.png" alt="ALLIGATOR JACKET">
@@ -167,8 +387,44 @@
 			</div>
 		</div>
 		<div class="shmore">
-			<a href="#shop/item">+</a>
+			<p onclick="showModal('modal8')">+</p>
 		</div>
+	</div>
+	<div id="modal8" class="modal">
+		<div class="modalContent">
+    		<span class="close" onclick="closeModal()">&times;</span>
+    		<div class="slideContainer">
+				<div class="shopSlide" id="defaultSlide"><img class="itemPicture" src="assets/shop/ALLIGATOR_JACKET.png"></div>
+				<div class="shopSlide"><img src="assets/shop/ALLIGATOR_JACKET_GREEN_2.png"></div>
+				<div class="shopSlide"><img src="assets/shop/ALLIGATOR_JACKET_ALBINO_1.jpg"></div>
+				<div class="shopSlide"><img src="assets/shop/ALLIGATOR_JACKET_ALBINO_2.png"></div>
+				<div class="row">
+					<div class="column"><img class="thumb" src="assets/shop/ALLIGATOR_JACKET.png" onclick="currentSlide(1)" alt="ALLIGATOR JACKET"></div>
+					<div class="column"><img class="thumb" src="assets/shop/ALLIGATOR_JACKET_GREEN_2.png" onclick="currentSlide(2)" alt="ALLIGATOR JACKET"></div>
+					<div class="column"><img class="thumb" src="assets/shop/ALLIGATOR_JACKET_ALBINO_1.jpg" onclick="currentSlide(3)" alt="ALLIGATOR JACKET"></div>
+					<div class="column"><img class="thumb" src="assets/shop/ALLIGATOR_JACKET_ALBINO_2.png" onclick="currentSlide(4)" alt="ALLIGATOR JACKET"></div>
+				</div>
+			</div>
+			<div class="itemInfo">
+				<h3 class="itemTitle">ALLIGATOR JACKET</h3>
+				<p>12 OZ. DENIM, EMBROIDERED LOGO, CUSTOM ALLIGATOR PRINT, COPPER BUTTONS, FITS TRUE TO SIZE</p>
+				<h4 class="itemPrice">$110</h4>
+				<div class="itemOptions">
+					<select>
+						<option selected disabled="">COLOUR</option>
+						<option value="w">ALBINO WHITE</option>
+						<option value="g">SWAMP GREEN</option>
+					</select>
+					<select>
+						<option selected disabled="">SIZE</option>
+						<option value="s">SMALL</option>
+						<option value="m">MEDIUM</option>
+						<option value="l">LARGE</option>
+					</select>
+					<button class="btnAddCart" onclick="closeModal()">ADD TO CART</button>
+				</div>
+			</div>
+  		</div>
 	</div>
 	<div class="shopItem" id="9">
 		<img class="itempic" src="assets/shop/GELATO_SWEATER_VEST.png" alt="GELATO SWEATER VEST">
@@ -177,15 +433,40 @@
 		</div>
 		<div>
 			<div class="shdesc">
-				<p>DYED COTTON, JACQUARD KNIT</p>
+				<p>DYED COTTON JACQUARD KNIT</p>
 			</div>
 			<div class="shprice">
 				<h4>$90</h4>
 			</div>
 		</div>
 		<div class="shmore">
-			<a href="#shop/item">+</a>
+			<p onclick="showModal('modal9')">+</p>
 		</div>
+	</div>
+	<div id="modal9" class="modal">
+		<div class="modalContent">
+    		<span class="close" onclick="closeModal()">&times;</span>
+    		<div class="slideContainer">
+				<div class="shopSlide" id="defaultSlide"><img class="itemPicture" src="assets/shop/GELATO_SWEATER_VEST.png"></div>
+				<div class="row">
+					<div class="column"><img class="thumb" src="assets/shop/GELATO_SWEATER_VEST.png" onclick="currentSlide(1)" alt="GELATO SWEATER VEST"></div>
+				</div>
+			</div>
+			<div class="itemInfo">
+				<h3 class="itemTitle">GELATO SWEATER VEST</h3>
+				<p>DYED COTTON JACQUARD KNIT</p>
+				<h4 class="itemPrice">$90</h4>
+				<div class="itemOptions">
+					<select>
+						<option selected disabled="">SIZE</option>
+						<option value="s">SMALL</option>
+						<option value="m">MEDIUM</option>
+						<option value="l">LARGE</option>
+					</select>
+					<button class="btnAddCart" onclick="closeModal()">ADD TO CART</button>
+				</div>
+			</div>
+  		</div>
 	</div>
 	<div class="shopItem" id="10">
 		<img class="itempic" src="assets/shop/flower_boy.jpg" alt="FLOWER BOY">
@@ -201,8 +482,27 @@
 			</div>
 		</div>
 		<div class="shmore">
-			<a href="#shop/item">+</a>
+			<p onclick="showModal('modal10')">+</p>
 		</div>
+	</div>
+	<div id="modal10" class="modal">
+		<div class="modalContent">
+    		<span class="close" onclick="closeModal()">&times;</span>
+    		<div class="slideContainer">
+				<div class="shopSlide" id="defaultSlide"><img class="itemPicture" src="assets/shop/flower_boy.jpg"></div>
+				<div class="row">
+					<div class="column"><img class="thumb" src="assets/shop/flower_boy.jpg" onclick="currentSlide(1)" alt="FLOWER BOY VINYL"></div>
+				</div>
+			</div>
+			<div class="itemInfo">
+				<h3 class="itemTitle">FLOWER BOY VINYL</h3>
+				<p>DOUBLE LP, 180G VINYL, ORIGINAL ARTWORK</p>
+				<h4 class="itemPrice">$20</h4>
+				<div class="itemOptions">
+					<button class="btnAddCart" onclick="closeModal()">ADD TO CART</button>
+				</div>
+			</div>
+  		</div>
 	</div>
 	<div class="shopItem" id="11">
 		<img class="itempic" src="assets/shop/cherry_bomb.png" alt="CHERRY BOMB">
@@ -218,8 +518,27 @@
 			</div>
 		</div>
 		<div class="shmore">
-			<a href="#shop/item">+</a>
+			<p onclick="showModal('modal11')">+</p>
 		</div>
+	</div>
+	<div id="modal11" class="modal">
+		<div class="modalContent">
+    		<span class="close" onclick="closeModal()">&times;</span>
+    		<div class="slideContainer">
+				<div class="shopSlide" id="defaultSlide"><img class="itemPicture" src="assets/shop/cherry_bomb.png"></div>
+				<div class="row">
+					<div class="column"><img class="thumb" src="assets/shop/cherry_bomb.png" onclick="currentSlide(1)" alt="CHERRY BOMB VINYL"></div>
+				</div>
+			</div>
+			<div class="itemInfo">
+				<h3 class="itemTitle">CHERRY BOMB VINYL</h3>
+				<p>DOUBLE LP, 180G VINYL, ORIGINAL ARTWORK</p>
+				<h4 class="itemPrice">$20</h4>
+				<div class="itemOptions">
+					<button class="btnAddCart" onclick="closeModal()">ADD TO CART</button>
+				</div>
+			</div>
+  		</div>
 	</div>
 	<div class="shopItem" id="12">
 		<img class="itempic" src="assets/shop/wolf.png" alt="WOLF">
@@ -235,8 +554,27 @@
 			</div>
 		</div>
 		<div class="shmore">
-			<a href="#shop/item">+</a>
+			<p onclick="showModal('modal12')">+</p>
 		</div>
+	</div>
+	<div id="modal12" class="modal">
+		<div class="modalContent">
+    		<span class="close" onclick="closeModal()">&times;</span>
+    		<div class="slideContainer">
+				<div class="shopSlide" id="defaultSlide"><img class="itemPicture" src="assets/shop/wolf.png"></div>
+				<div class="row">
+					<div class="column"><img class="thumb" src="assets/shop/wolf.png" onclick="currentSlide(1)" alt="WOLF VINYL"></div>
+				</div>
+			</div>
+			<div class="itemInfo">
+				<h3 class="itemTitle">WOLF VINYL</h3>
+				<p>DOUBLE LP, 180G VINYL, ORIGINAL ARTWORK</p>
+				<h4 class="itemPrice">$20</h4>
+				<div class="itemOptions">
+					<button class="btnAddCart" onclick="closeModal()">ADD TO CART</button>
+				</div>
+			</div>
+  		</div>
 	</div>
 	<div class="shopItem" id="13">
 		<img class="itempic" src="assets/shop/goblin.jpg" alt="GOBLIN">
@@ -252,8 +590,89 @@
 			</div>
 		</div>
 		<div class="shmore">
-			<a href="#shop/item">+</a>
+			<p onclick="showModal('modal13')">+</p>
 		</div>
+	</div>
+	<div id="modal13" class="modal">
+		<div class="modalContent">
+    		<span class="close" onclick="closeModal()">&times;</span>
+    		<div class="slideContainer">
+				<div class="shopSlide" id="defaultSlide"><img class="itemPicture" src="assets/shop/goblin.jpg"></div>
+				<div class="row">
+					<div class="column"><img class="thumb" src="assets/shop/goblin.jpg" onclick="currentSlide(1)" alt="GOBLIN VINYL"></div>
+				</div>
+			</div>
+			<div class="itemInfo">
+				<h3 class="itemTitle">GOBLIN VINYL</h3>
+				<p>DOUBLE LP, 180G VINYL, ORIGINAL ARTWORK</p>
+				<h4 class="itemPrice">$20</h4>
+				<div class="itemOptions">
+					<button class="btnAddCart" onclick="closeModal()">ADD TO CART</button>
+				</div>
+			</div>
+  		</div>
+	</div>
+	<div class="shopItem" id="14">
+		<img class="itempic" src="assets/shop/of_2.png" alt="OF 2">
+		<div class="shtitle">
+			<h3>THE OF TAPE VOL 2 VINYL</h3>
+		</div>
+		<div>
+			<div class="shdesc">
+				<p>DOUBLE LP, 180G VINYL, ORIGINAL ARTWORK</p>
+			</div>
+			<div class="shprice">
+				<h4>$20</h4>
+			</div>
+		</div>
+		<div class="shmore">
+			<p onclick="showModal('modal14')">+</p>
+		</div>
+	</div>
+	<div id="modal14" class="modal">
+		<div class="modalContent">
+    		<span class="close" onclick="closeModal()">&times;</span>
+    		<div class="slideContainer">
+				<div class="shopSlide" id="defaultSlide"><img class="itemPicture" src="assets/shop/of_2.png"></div>
+				<div class="row">
+					<div class="column"><img class="thumb" src="assets/shop/of_2.png" onclick="currentSlide(1)" alt="THE OF TAPE VOL 2 VINYL"></div>
+				</div>
+			</div>
+			<div class="itemInfo">
+				<h3 class="itemTitle">THE OF TAPE VOL 2 VINYL</h3>
+				<p>DOUBLE LP, 180G VINYL, ORIGINAL ARTWORK</p>
+				<h4 class="itemPrice">$20</h4>
+				<div class="itemOptions">
+					<button class="btnAddCart" onclick="closeModal()">ADD TO CART</button>
+				</div>
+			</div>
+  		</div>
+	</div>
+
+	<img onclick="showModal('cartModal')" id="cartButton" src="assets/cart.png" alt="CART">
+	<div id="cartModal" class="modal">
+		<div class="modalContent">
+    		<span class="close" onclick="closeModal()">&times;</span>
+    		<div class="cart">
+	            <h2>CART</h2>
+	            <div class="cartTable">
+		            <div class="cartRow">
+		                <span class="cartHeader cartItem cartColumn"><h5>ITEM</h5></span>
+		                <span class="cartHeader cartPrice cartColumn"><h5>PRICE</h5></span>
+		                <span class="cartHeader cartQuantity cartColumn"><h5>QUANTITY</h5></span>
+		            </div>
+		            <div class="cartItems">
+		            	<!--Cart items will fill up here-->
+		            </div>
+		            <div class="cartTotal">
+		                <strong class="cartTotalTitle">Total</strong>
+		                <span class="cartTotalPrice">$39.97</span>
+		            </div>
+		        </div>
+	            <button class="btn btnPrimary btnPurchase" onclick="closeModal()" type="button">PURCHASE</button>
+	        </div>
+  		</div>
+	</div>
 	</div>
 </div>
 

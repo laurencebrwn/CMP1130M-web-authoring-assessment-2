@@ -43,6 +43,7 @@ body {
 }
 .top #muteButton:hover {
 	background-color: #ee2036;
+	filter: drop-shadow(0px 0px 10px rgba(0,0,0,.5));
 	transform: scale(1.1);
 }
 .header {
@@ -117,20 +118,6 @@ body {
 .slide img{
 	width: 100%;
 }
-.fade {
-	-webkit-animation-name: fade;
-	-webkit-animation-duration: 1.5s;
-	animation-name: fade;
-	animation-duration: 1.5s;
-}
-@-webkit-keyframes fade {
-	from {opacity: .4} 
-	to {opacity: 1}
-}
-@keyframes fade {
-	from {opacity: .4} 
-	to {opacity: 1}
-}
 .body {
 	display: flex;
 	flex-wrap: wrap;
@@ -141,7 +128,7 @@ body {
 	align-items: center;
 	justify-content: center;
 }
-.body > div {
+.body > .shopItem, .spotify, .demo, .musicItem {
 	width: 70vw;
     height: 112vw;
     min-width: 250px;
@@ -159,6 +146,9 @@ body {
 	align-items: center;
 	justify-content: space-around;
 	align-content: flex-start;
+}
+.shopItem a {
+	text-decoration: none;
 }
 .itempic {
 	height: 50%;
@@ -191,7 +181,7 @@ body {
 	width: auto;
 	padding: 0;
 }
-.shmore a {
+.shmore p {
 	margin: auto auto auto auto;
 	display: block;
 	height: 60px;
@@ -204,10 +194,11 @@ body {
 	text-align: center;
 	font-family: Arial;
 	font-size: 70px;
+	cursor: pointer;
 	text-decoration: none;
 	transition: all .2s ease-in-out;
 }
-.shmore a:hover {
+.shmore p:hover {
   	background-color: #f5de43;
   	filter: drop-shadow(0px 0px 10px rgba(0,0,0,.5));
   	transform: scale(1.1);
@@ -230,6 +221,278 @@ body {
 	font-weight: 800;
 	margin: 0;
 }
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 100; /* Sit on top */
+	top:0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	width: 100vw; /* Full width */
+	height: 100vh; /* Full height */
+	/*overflow: auto;  Enable scroll if needed */
+	background-color: rgb(0,0,0); /* Fallback color */
+	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+	flex-wrap: nowrap;
+	flex-direction: column;
+	align-items: center;
+}
+.modalContent {
+	background-color: #fefefe;
+	margin: auto; /* 15% from the top and centered */
+	padding: 20px;
+	border: 1px solid #888;
+	width: auto; /* Could be more or less, depending on screen size */
+	max-width: 80vw;
+	max-height: 80vh;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	align-items: center;
+}
+.close {
+	color: #aaa;
+	text-align: right;
+	width: 100%;
+	line-height: 3vmin;
+	font-size: 6vmin;
+	font-weight: bold;
+}
+.close:hover, .close:focus {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+}
+.slideContainer {
+  	position: relative;
+  	width: 100%;
+  	max-width: 378px;
+}
+.slideContainer img {
+	width: 100%;
+}
+.shopSlide {
+  	display: none;
+}
+#defaultSlide {
+	display: block;
+}
+.row:after {
+  	content: "";
+  	display: table;
+  	clear: both;
+}
+.column {
+ 	float: left;
+  	width: 16.66%;
+}
+.thumb {
+  	opacity: 0.6;
+  	cursor: pointer;
+}
+.thumb:hover {
+  	opacity: 1;
+}
+.itemInfo h3 {
+	font-family: Arial;
+	font-size: 35px;
+	font-weight: 900;
+	margin:3px;
+	text-align: center;
+}
+.itemInfo p {
+	font-family: Arial;
+	font-size: 25px;
+	font-weight: 600;
+	margin:2px;
+	text-align: center;
+}
+.itemInfo h4 {
+	font-family: Arial;
+	font-size: 27px;
+	font-weight: 800;
+	margin:2px;
+	text-align: center;
+}
+.itemOptions{
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: space-around;
+}
+.itemOptions select {
+	padding: 2px;
+	height: 4vmin;
+	font-family: Arial;
+	font-size: 25px;
+	font-weight: 600;
+	margin: 5px;
+	min-height: 30px;
+	width: auto;
+}
+.itemOptions option {
+	font-family: Arial;
+	font-size: 15px;
+	font-weight: 600;
+	margin: 0;
+}
+.itemOptions button {
+	padding: 2px;
+	height: 4vmin;
+	font-family: Arial;
+	font-size: 25px;
+	font-weight: 600;
+	margin: 5px;
+	min-height: 30px;
+	width: auto;
+	background-color: #00afd8;
+	border: none;
+	color: white;
+}
+.body #cartButton {
+	position: fixed;
+  	right: 1vmin;
+  	bottom: 11vmin;
+  	display: block;
+	height: 6vmin;
+	min-height: 35px;
+	width: auto;
+	-moz-border-radius: 6vmin;
+	border-radius: 6vmin;
+	background-color: #f5de43;
+	padding: 1vmin;
+	background-clip: padding-box;
+	cursor: pointer;
+	transition: all .2s ease-in-out;
+}
+.body #cartButton:hover {
+	background-color: #ee2036;
+	transform: scale(1.1);
+	filter: drop-shadow(0px 0px 10px rgba(0,0,0,.5));
+}
+.cart {
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: column;
+	align-items: center;
+	align-content: flex-start;
+	width:80vw;
+	min-width:425px;
+}
+.cart h2 {
+    font-family: Arial;
+    font-weight: 600;
+    font-size: 6vmin;
+    margin: 0;
+}
+.cartHeader h5 {
+    font-family: Arial;
+    font-weight: 600;
+    font-size: 4vmin;
+    margin: 0;
+}
+.cartTable {
+	width:100%;
+}
+.cartColumn {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid black;
+    margin-right: 1.5em;
+    padding-bottom: 10px;
+    margin-top: 10px;
+}
+.cartRow {
+    display: flex;
+}
+.cartItem {
+    width: 55%;
+}
+.cartPrice {
+    width: 20%;
+    font-family: Arial;
+    font-weight: 600;
+    font-size: 2.5vmin;
+}
+.cartQuantity {
+    width: 25%;
+}
+.cartItemTitle {
+    color: #333;
+    margin-left: .5em;
+    font-family: Arial;
+    font-weight: 600;
+    font-size: 3vmin;
+}
+.cartItemImage {
+    width: 35%;
+    height: auto;
+    border-radius: 10px;
+}
+.btnRemove {
+    color: white;
+    background-color: #EB5757;
+    border: none;
+    border-radius: .3em;
+    font-weight: bold;
+}
+.btnRemove:hover {
+    background-color: #CC4C4C;
+}
+.cartQuantityInput {
+    height: 34px;
+    width: 50px;
+    border-radius: 5px;
+    border: 1px solid #56CCF2;
+    background-color: #eee;
+    color: #333;
+    padding: 0;
+    text-align: center;
+    font-size: 1.2em;
+    margin-right: 25px;
+}
+.cartRow:last-child {
+    border-bottom: 1px solid black;
+}
+.cartRow:last-child .cartColumn {
+    border: none;
+}
+.cartTotal {
+    text-align: end;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+.cartTotalTitle {
+    font-weight: bold;
+    font-size: 1.5em;
+    color: black;
+    margin-right: 20px;
+    font-family: Arial;
+    font-weight: 600;
+    font-size: 3vmin;
+}
+.cartTotalPrice {
+    font-size: 1.1em;
+    font-family: Arial;
+    font-weight: 600;
+    font-size: 2.5vmin;
+}
+.btnPurchase {
+    display: block
+	padding: 2px;
+	height: 4vmin;
+	font-family: Arial;
+	font-size: 3vmin;
+	font-weight: 600;
+	margin: 5px;
+	min-height: 30px;
+	width: auto;
+	background-color: #00afd8;
+	border: none;
+	color: white;
+}
 .spotify{
 	display: flex;
   	justify-content: center;
@@ -247,6 +510,11 @@ body {
   	justify-content: center;
  	align-items: center;
  	position: relative;
+}
+.demo canvas {
+	height: 95%;
+	width: 93%;
+	z-index: 5;
 }
 .demo a {
 	position: absolute;
@@ -488,6 +756,7 @@ input[type=submit]:hover {
 	flex-direction: row;
 	align-items: center;
 	justify-content: space-between;
+	z-index: 10;
 }
 .footer p{
 	padding: 0;
@@ -545,13 +814,13 @@ input[type=submit]:hover {
 		flex-direction: row;
 		margin: 6vmin 0 8vmin 0;
 	}
-	.body > div {
-		width: 28vw;
-    	height: 45vw;
+	.body > .shopItem, .spotify, .demo, .musicItem {
+		width: 20vw;
+    	height: 32vw;
 		min-width: 300px;
-		max-width:350px;
+		max-width: 400px;
 		min-height: 480px;
-		max-height: 560px;
+		max-height: 640px;
 	}
 	.content {
 		width: 80vw;
@@ -566,6 +835,44 @@ input[type=submit]:hover {
 		border-radius: 80px;
 		font-size: 90px;
 	}
+	.modalContent{
+		flex-direction: row;
+		justify-content: center;
+	}
+	.slideContainer {
+	  	width:45%;
+	  	max-width: 45vmin;
+	}
+	.itemInfo {
+		width: 50%;
+	}
+	.itemInfo h3 {
+		font-size: 2.5vmin;
+	}
+	.itemInfo p {
+		font-size: 1.5vmin;
+	}
+	.itemInfo h4 {
+		font-size: 2.3vmin;
+	}
+	.itemOptions select {
+		font-size: 1.5vmin;
+	}
+	.itemOptions option {
+		font-size: 1.5vmin;
+	}
+	.itemOptions button {
+		font-size: 1.5vmin;
+	}
+	.body #cartButton {
+	  	right: 1vmin;
+	  	bottom: 4vmin;
+	  	display: block;
+		height: 4vmin;
+	}
+	.cartItemImage {
+    	max-width: 100px;
+    }
 	.muLinks img {
 		height: 8vmin;
 		max-height: 70px;
