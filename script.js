@@ -1,3 +1,6 @@
+if(localStorage && localStorage.getItem('cart')){
+  var storedCart = JSON.parse(localStorage.getItem('cart'))
+}
 window.onload = function() { // DOM loaded
   init();
 }
@@ -91,102 +94,130 @@ window.onclick = function(event) {
 
 function readyCart() {
   var removeCartItemButtons = document.getElementsByClassName('btnRemove')
-    for (var i = 0; i < removeCartItemButtons.length; i++) {
-        var button = removeCartItemButtons[i]
-        button.addEventListener('click', removeCartItem)
-    }
+  for (var i = 0; i < removeCartItemButtons.length; i++) {
+      var button = removeCartItemButtons[i]
+      button.addEventListener('click', removeCartItem)
+  }
 
-    var quantityInputs = document.getElementsByClassName('cartQuantityInput')
-    for (var i = 0; i < quantityInputs.length; i++) {
-        var input = quantityInputs[i]
-        input.addEventListener('change', quantityChanged)
-    }
+  var quantityInputs = document.getElementsByClassName('cartQuantityInput')
+  for (var i = 0; i < quantityInputs.length; i++) {
+      var input = quantityInputs[i]
+      input.addEventListener('change', quantityChanged)
+  }
 
-    var addToCartButtons = document.getElementsByClassName('btnAddCart')
-    for (var i = 0; i < addToCartButtons.length; i++) {
-        var button = addToCartButtons[i]
-        button.addEventListener('click', addToCartClicked)
-    }
-
-    document.getElementsByClassName('btnPurchase')[0].addEventListener('click', purchaseClicked)
+  var addToCartButtons = document.getElementsByClassName('btnAddCart')
+  for (var i = 0; i < addToCartButtons.length; i++) {
+      var button = addToCartButtons[i]
+      button.addEventListener('click', addToCartClicked)
+  }
+  console.log(storedCart)
+  var total = 0
+  for (var i = 0; i < storedCart.length; i++) {
+    console.log('beep')
+    addItemToCart(storedCart[i][0],storedCart[i][1],storedCart[i][3],storedCart[i][2])
+  }
+  updateCartTotal()
+  document.getElementsByClassName('btnPurchase')[0].addEventListener('click', purchaseClicked)
 }
 
 
 function purchaseClicked() {
-    alert('Thank you for your purchase')
-    var cartItems = document.getElementsByClassName('cartItems')[0]
-    while (cartItems.hasChildNodes()) {
-        cartItems.removeChild(cartItems.firstChild)
-    }
-    updateCartTotal()
+  alert('Thank you for your purchase')
+  var cartItems = document.getElementsByClassName('cartItems')[0]
+  while (cartItems.hasChildNodes()) {
+      cartItems.removeChild(cartItems.firstChild)
+  }
+  updateCartTotal()
+  updateLocalStorage()
 }
 
 function removeCartItem(event) {
-    var buttonClicked = event.target
-    buttonClicked.parentElement.parentElement.remove()
-    updateCartTotal()
+  var buttonClicked = event.target
+  buttonClicked.parentElement.parentElement.remove()
+  updateCartTotal()
+  updateLocalStorage()
 }
 
 function quantityChanged(event) {
-    var input = event.target
-    if (isNaN(input.value) || input.value <= 0) {
-        input.value = 1
-    }
-    updateCartTotal()
+  var input = event.target
+  if (isNaN(input.value) || input.value <= 0) {
+      input.value = 1
+  }
+  updateCartTotal()
+  updateLocalStorage()
 }
 
 function addToCartClicked(event) {
-    var button = event.target
-    var shopItem = button.parentElement.parentElement.parentElement
-    console.log(shopItem)
-    var title = shopItem.getElementsByClassName('itemTitle')[0].innerText
-    var price = shopItem.getElementsByClassName('itemPrice')[0].innerText
-    var imageSrc = shopItem.getElementsByClassName('itemPicture')[0].src
-    addItemToCart(title, price, imageSrc)
-    updateCartTotal()
+  var button = event.target
+  var shopItem = button.parentElement.parentElement.parentElement
+  console.log(shopItem)
+  var title = shopItem.getElementsByClassName('itemTitle')[0].innerText
+  var price = shopItem.getElementsByClassName('itemPrice')[0].innerText
+  var imageSrc = shopItem.getElementsByClassName('itemPicture')[0].src
+  addItemToCart(title, price, imageSrc, 1)
+  updateCartTotal()
+  updateLocalStorage()
 }
 
-function addItemToCart(title, price, imageSrc) {
-    var cartRow = document.createElement('div')
-    cartRow.classList.add('cartRow')
-    var cartItems = document.getElementsByClassName('cartItems')[0]
-    var cartItemNames = cartItems.getElementsByClassName('cartItemTitle')
-    for (var i = 0; i < cartItemNames.length; i++) {
-        if (cartItemNames[i].innerText == title) {
-            alert('This item is already added to the cart')
-            return
-        }
-    }
-    var cartRowContents = `
-        <div class="cartItem cartColumn">
-            <img class="cartItemImage" src="${imageSrc}">
-            <span class="cartItemTitle">${title}</span>
-        </div>
-        <span class="cartPrice cartColumn">${price}</span>
-        <div class="cartQuantity cartColumn">
-            <input class="cartQuantityInput" type="number" value="1">
-            <button class="btn btnRemove" type="button">X</button>
-        </div>`
-    cartRow.innerHTML = cartRowContents
-    cartItems.append(cartRow)
-    cartRow.getElementsByClassName('btnRemove')[0].addEventListener('click', removeCartItem)
-    cartRow.getElementsByClassName('cartQuantityInput')[0].addEventListener('change', quantityChanged)
+function addItemToCart(title, price, imageSrc,qty) {
+  var cartRow = document.createElement('div')
+  cartRow.classList.add('cartRow')
+  var cartItems = document.getElementsByClassName('cartItems')[0]
+  var cartItemNames = cartItems.getElementsByClassName('cartItemTitle')
+  for (var i = 0; i < cartItemNames.length; i++) {
+      if (cartItemNames[i].innerText == title) {
+          alert('This item is already added to the cart')
+          return
+      }
+  }
+  var cartRowContents = `
+      <div class="cartItem cartColumn">
+          <img class="cartItemImage" src="${imageSrc}">
+          <span class="cartItemTitle">${title}</span>
+      </div>
+      <span class="cartPrice cartColumn">${price}</span>
+      <div class="cartQuantity cartColumn">
+          <input class="cartQuantityInput" type="number" value="${qty}">
+          <button class="btn btnRemove" type="button">X</button>
+      </div>`
+  cartRow.innerHTML = cartRowContents
+  cartItems.append(cartRow)
+
+  cartRow.getElementsByClassName('btnRemove')[0].addEventListener('click', removeCartItem)
+  cartRow.getElementsByClassName('cartQuantityInput')[0].addEventListener('change', quantityChanged)
 }
 
 function updateCartTotal() {
-    var cartItemContainer = document.getElementsByClassName('cartItems')[0]
-    var cartRows = cartItemContainer.getElementsByClassName('cartRow')
-    var total = 0
-    for (var i = 0; i < cartRows.length; i++) {
-        var cartRow = cartRows[i]
-        var priceElement = cartRow.getElementsByClassName('cartPrice')[0]
-        var quantityElement = cartRow.getElementsByClassName('cartQuantityInput')[0]
-        var price = parseFloat(priceElement.innerText.replace('$', ''))
-        var quantity = quantityElement.value
-        total = total + (price * quantity)
-    }
-    total = Math.round(total * 100) / 100
-    document.getElementsByClassName('cartTotalPrice')[0].innerText = '$' + total
+  var cartItemContainer = document.getElementsByClassName('cartItems')[0]
+  var cartRows = cartItemContainer.getElementsByClassName('cartRow')
+  var total = 0
+  for (var i = 0; i < cartRows.length; i++) {
+      var cartRow = cartRows[i]
+      var priceElement = cartRow.getElementsByClassName('cartPrice')[0]
+      var quantityElement = cartRow.getElementsByClassName('cartQuantityInput')[0]
+      var price = parseFloat(priceElement.innerText.replace('$', ''))
+      var quantity = quantityElement.value
+      total = total + (price * quantity)
+  }
+  total = Math.round(total * 100) / 100
+  document.getElementsByClassName('cartTotalPrice')[0].innerText = '$' + total
+}
+
+function updateLocalStorage() {
+  var cartItemContainer = document.getElementsByClassName('cartItems')[0]
+  var cartRows = cartItemContainer.getElementsByClassName('cartRow')
+  var total = 0
+  storedCart = []
+  for (var i = 0; i < cartRows.length; i++) {
+      var cartRow = cartRows[i]
+      var title = cartRow.getElementsByClassName('cartItemTitle')[0].innerText
+      var price = cartRow.getElementsByClassName('cartPrice')[0].innerText
+      var imageSrc = cartRow.getElementsByClassName('cartItemImage')[0].src
+      var quantityElement = cartRow.getElementsByClassName('cartQuantityInput')[0]
+      var quantity = quantityElement.value
+      storedCart.push([title, price, quantity, imageSrc])
+  }
+  localStorage.setItem('cart', JSON.stringify(storedCart))
 }
 
 function startLetters() {
