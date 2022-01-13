@@ -1,4 +1,4 @@
-# web-authoring-assessment-2
+# CMP1130M-web-authoring-assessment-2
 
 A responsive website for an artist created for the CMP1130M-1819 - Web Authoring Module Assessment 2.
 
